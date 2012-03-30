@@ -57,7 +57,7 @@ class @Mercury.Regions.Snippetable extends Mercury.Region
 
     jQuery(@document).on 'keyup', =>
       return if @previewing || Mercury.region != @
-      Mercury.changes = true
+      Mercury.setChanges(true)
 
 
   focus: ->
