@@ -60,6 +60,12 @@ jQuery.extend @Mercury,
     jQuery(window).trigger("mercury:#{eventName}", options)
 
 
+  setChanges: (changes) ->
+    if Mercury.changes != changes
+      Mercury.changes = changes
+      Mercury.trigger('changes', changes)
+    return Mercury.changes
+
   # Alerting and logging methods
   notify: (args...) ->
     window.alert(Mercury.I18n.apply(@, args))

@@ -210,7 +210,7 @@ class @Mercury.PageEditor
       dataType: @options.saveDataType,
       data: {content: data, _method: method}
       success: =>
-        Mercury.changes = false
+        Mercury.setChanges(false)
         Mercury.trigger('saved')
         callback() if typeof(callback) == 'function'
       error: (response) =>
